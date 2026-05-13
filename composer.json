@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ksfraser\\KnowledgeBase\\": "src/Ksfraser/KnowledgeBase/"
+            "Ksfraser\\": "src/Ksfraser/"
         }
     },
     "minimum-stability": "stable"
