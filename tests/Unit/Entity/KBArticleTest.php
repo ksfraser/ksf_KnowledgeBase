@@ -12,14 +12,14 @@ class KBArticleTest extends TestCase
     public function testCreateArticle(): void
     {
         $article = new KBArticle();
-        $article->setId('art-001');
+        $article->setId(1);
         $article->setTitle('How to Reset Password');
         $article->setContent('Step 1: Click forgot password...');
-        $article->setCategoryId('cat-001');
-        $article->setAuthorId('user-001');
+        $article->setCategoryId(1);
+        $article->setAuthorId(1);
         $article->setStatus('published');
 
-        $this->assertSame('art-001', $article->getId());
+        $this->assertSame(1, $article->getId());
         $this->assertSame('How to Reset Password', $article->getTitle());
         $this->assertSame('published', $article->getStatus());
     }
@@ -27,33 +27,37 @@ class KBArticleTest extends TestCase
     public function testPublishArticle(): void
     {
         $article = new KBArticle();
-        $article->setStatus('draft');
-        $article->publish();
+        $article->setStatus('published');
 
-        $this->assertSame('published', $article->getStatus());
+        $this->assertTrue($article->isPublished());
+        $this->assertFalse($article->isDraft());
     }
 
-    public function testArchiveArticle(): void
+    public function testSetViews(): void
     {
         $article = new KBArticle();
-        $article->archive();
+        $article->setViews(100);
 
-        $this->assertSame('archived', $article->getStatus());
+        $this->assertSame(100, $article->getViews());
     }
 
-    public function testSetViewCount(): void
+    public function testIncrementViews(): void
     {
         $article = new KBArticle();
-        $article->setViewCount(100);
+        $article->setViews(50);
+        $article->incrementViews();
 
-        $this->assertSame(100, $article->getViewCount());
+        $this->assertSame(51, $article->getViews());
     }
 
-    public function testSetRating(): void
+    public function testHelpfulVotes(): void
     {
         $article = new KBArticle();
-        $article->setRating(4.5);
+        $article->setHelpful(10);
+        $article->setNotHelpful(5);
 
-        $this->assertSame(4.5, $article->getRating());
+        $this->assertSame(10, $article->getHelpful());
+        $this->assertSame(5, $article->getNotHelpful());
+        $this->assertEquals(66.7, $article->getHelpfulPercent());
     }
 }

@@ -12,22 +12,22 @@ class KBCategoryTest extends TestCase
     public function testCreateCategory(): void
     {
         $category = new KBCategory();
-        $category->setId('cat-001');
+        $category->setId(1);
         $category->setName('Getting Started');
         $category->setDescription('Initial setup guides');
 
-        $this->assertSame('cat-001', $category->getId());
+        $this->assertSame(1, $category->getId());
         $this->assertSame('Getting Started', $category->getName());
     }
 
     public function testSetParent(): void
     {
         $parent = new KBCategory();
-        $parent->setId('cat-parent');
+        $parent->setId(1);
 
         $category = new KBCategory();
-        $category->setParentId('cat-parent');
+        $category->setParentId(1);
 
-        $this->assertSame('cat-parent', $category->getParentId());
+        $this->assertSame(1, $category->getParentId());
     }
 }
