@@ -3,7 +3,7 @@
         'name' => 'ksfraser/ksf-knowledgebase',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '7340ec7280435e90b139855cb48d5224cd879607',
+        'reference' => '23e7734edd715905cb2bfd40e49d765b59213cba',
         'type' => 'php-package',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'ksfraser/ksf-knowledgebase' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '7340ec7280435e90b139855cb48d5224cd879607',
+            'reference' => '23e7734edd715905cb2bfd40e49d765b59213cba',
             'type' => 'php-package',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
